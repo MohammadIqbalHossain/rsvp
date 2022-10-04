@@ -1,4 +1,7 @@
 import React from 'react'
+import { FcGoogle } from 'react-icons/fc';
+import { BsLinkedin } from 'react-icons/bs';
+import Modal from './Modal';
 
 function Form() {
   return (
@@ -55,9 +58,45 @@ function Form() {
               className="input input-bordered w-full max-w-xs" />
           </div>
 
+
+
+        </div>
+
+        <div className="ml-10 mt-20 flex">
+          <input type="radio" name="radio-2" className="radio radio-primary" checked />
+          <p className="mx-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime delectus quod consequuntur error odio optio sed aliquam, sunt ipsa quam?</p>
+        </div>
+
+
+        <div className="flex justify-center items-center my-10">
+          <button className="btn mr-10 uppercase">
+            <label htmlFor="my-modal-6" className="btn modal-button">select slot</label>
+          </button>
+          <button className="btn btn-primary uppercase">Submit</button>
+        </div>
+
+        <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center my-10">
+            <button className="flex items-center border-2 border-black p-3 rounded-lg text-lg hover:bg-primary hover:text-white"
+
+            >
+              <FcGoogle className="mx-5 text-2xl" />
+              Continue with google
+            </button>
+          </div>
+
+          <div className="flex justify-center items-center my-10 ml-5">
+            <button className="flex items-center border-2 border-black p-3 rounded-lg text-lg hover:bg-primary hover:text-white"
+
+            >
+              <BsLinkedin className="mx-5 text-2xl" />
+              Continue with Linkedin
+            </button>
+          </div>
         </div>
 
       </div>
+      <Modal />
     </div>
   )
 }

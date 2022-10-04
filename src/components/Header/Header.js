@@ -5,13 +5,13 @@ import Form from '../Form/Form';
 
 function Header() {
   return (
-    <div className="flex justify-between items-center border bg-gradient-to-br from-sky-400 to-green-500">
+    <div className="flex justify-between items-center bg-gradient-to-br from-sky-400 to-green-500">
 
 
-      <div className="md:w-[900px] md:h-[500px]">
+      <div className="">
 
-        <div className="w-full">
-          <img src={image} alt="" />
+        <div className="">
+          <img className="h-[500px] w-full"  src={image} alt="" />
         </div>
 
         <p>
@@ -19,7 +19,7 @@ function Header() {
         </p>
       </div>
 
-      <div>
+      <div className="">
         <Form />
       </div>
 
