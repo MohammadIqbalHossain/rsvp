@@ -16,13 +16,13 @@ function Modal() {
         <div>
             <input type="checkbox" id="my-modal-6" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
+                <div className="modal-box flex justify-center items-center">
                     <DayPicker
                         mode="single"
                         selected={selected}
                         onSelect={setSelected}
                     />
-                    {footer}
+                   <h2 className="text-center font-bold"> {footer}</h2>
                     <div className="modal-action">
                         <label htmlFor="my-modal-6" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     </div>
