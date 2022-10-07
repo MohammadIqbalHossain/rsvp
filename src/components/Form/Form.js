@@ -3,10 +3,34 @@ import { FcGoogle } from 'react-icons/fc';
 import { BsLinkedin } from 'react-icons/bs';
 import Modal from './Modal';
 import { useForm } from 'react-hook-form';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import Spinner from '../Shared/Spinner';
 
 function Form() {
 
   const { register, formState: { errors }, handleSubmit } = useForm();
+
+
+
+  const [
+    signInWithGoogle,
+    googleUser,
+    googleLoading,
+    googleError
+  ] = useSignInWithGoogle(auth);
+
+  if (googleLoading) {
+    return <Spinner />
+  }
+
+  let authError;
+  if (googleError) {
+    authError = <p className="text-sm text-red-600">
+      {googleError?.message}
+    </p>
+
+  }
 
 
   const onSubmit = data => {
@@ -166,18 +190,16 @@ function Form() {
         </form>
 
 
-
-
-
-
         <div className="flex justify-center items-center">
-          <div className="flex justify-center items-center my-10">
+          <div className="flex justify-center items-center my-10 flex-col">
             <button className="flex items-center border-2 border-black p-3 rounded-lg text-lg hover:bg-primary hover:text-white"
-
+              onClick={() => signInWithGoogle()}
             >
               <FcGoogle className="mx-5 text-2xl" />
               Continue with google
             </button>
+
+            <h2>{authError}</h2>
           </div>
 
           <div className="flex justify-center items-center my-10 ml-5">

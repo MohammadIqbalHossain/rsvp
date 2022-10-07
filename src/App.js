@@ -1,12 +1,16 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Form from './components/Form/Form';
-import Header from './components/Header/Header';
+import NewForm from './components/Form/NewForm';
+import Home from './components/Header/Home';
+
 
 function App() {
   return (
-    <div>
-      <Header />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
+
+      
   );
 }
 
